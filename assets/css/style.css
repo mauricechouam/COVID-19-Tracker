@@ -1,0 +1,42 @@
+/* Global */ 
+* {
+    max-width: 100vw;
+}
+
+/* Jumbotron */ 
+/* shape it up */ 
+.jumbotron {
+    margin: -20px 0 -10px 0;
+}
+
+/* text image */ 
+.jumbotron #cov-com-text {
+    max-height: 30%;
+    max-width: 30%;
+    margin: -20px 0;
+}
+
+.jumbotron #cov-com-icon {
+    max-height: 15%;
+    max-width: 15%;
+}
+
+/* Search Button area */ 
+#search-card {
+    border-style: none;
+}
+
+.search-button {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 50%;
+    border-radius: 20px;
+}
+
+/* Cards */ 
+/* trim them up */ 
+.all-cards {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
