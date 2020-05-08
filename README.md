@@ -1,6 +1,6 @@
 # COVID-COMMU-DASH #
 
-Project #1 COV-19
+Project #1 COV-19 information dashboard 
 
 # Team Members #
 
