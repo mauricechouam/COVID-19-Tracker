@@ -33,6 +33,17 @@
     border-radius: 20px;
 }
 
+/* News  & Testing Section */ 
+#news-list li, #test-list li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+#news-list a {
+    color: #333 ;
+    font-weight: 500;
+}
+
 /* Cards */ 
 /* trim them up */ 
 .all-cards {

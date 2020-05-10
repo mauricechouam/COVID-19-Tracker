@@ -24,7 +24,9 @@
                 id="cov-com-icon"> -->
     </div>
     <!-- </nav> -->
+
     <div class="row">&nbsp;</div>
+
     <div class="container">
 
         <div class="card" id="search-card">
@@ -42,8 +44,10 @@
                 <p>Possibly a map showing useful places related to covid wellness or
                     just getting some services or food.
                     <a href="https://www.mapbox.com">mapbox.com</a> might be the way to go</p>
+                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us"></div>
             </div>
         </div>
+
         <div class="row">&nbsp;</div>
 
         <div class="card all-cards">
@@ -54,35 +58,42 @@
                 </p>
             </div>
         </div>
+
+        <div class="row">&nbsp;</div>
+
+        <!-- THIS is what I have been working on, News and Local Testing -->
+        <div class="card all-cards">
+            <div class="card-body">
+                <!-- new ids to work with -->
+                <div class="card-title" id="news">News Section</div>
+                <hr>
+                <ul id="news-list">
+                    <li><a id="news-item-0"></a></li>
+                    <li><a id="news-item-1"></a></li>
+                    <li><a id="news-item-2"></a></li>
+                    <li><a id="news-item-3"></a></li>
+                    <li><a id="news-item-4"></a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="row">&nbsp;</div>
 
         <div class="card all-cards">
             <div class="card-body">
-                <div class="card-title">Resources / Local Resources</div>
+                <!-- new ids to work with -->
+                <div class="card-title" id="local-testing">Testing in Your State</div>
                 <hr>
-                <p>This section might be harder to fill. Will we have / find the right API resources to pull up local
-                    resources? Or should the goal be to more simply offer CDC / WHO resources along with lighter
-                    material like things to do while sheltering in place?</p>
+                <ul id="test-list">
+                    <!-- dynamically filled -->
+                </ul>
 
             </div>
         </div>
+
         <div class="row">&nbsp;</div>
-
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">News Section</div>
-                <hr>
-                <p>Found a good starting point for this with the CDC's 2019 Novel Coronavirus API. See script file, open
-                    console.</p>
-            </div>
-        </div>
-
 
     </div>
-
-
-
-
 
     <!-- main jQuery library -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
