@@ -64,16 +64,15 @@
         <!-- THIS is what I have been working on, News and Local Testing -->
         <div class="card all-cards">
             <div class="card-body">
-                <!-- new ids to work with -->
                 <div class="card-title" id="news">News Section</div>
                 <hr>
-                <ul id="news-list">
-                    <li><a id="news-item-0"></a></li>
-                    <li><a id="news-item-1"></a></li>
-                    <li><a id="news-item-2"></a></li>
-                    <li><a id="news-item-3"></a></li>
-                    <li><a id="news-item-4"></a></li>
+                <!-- .hide is the toggle class, important! -->
+                <ul class="hide" id="news-list">
+                    <!-- dynamically filled -->
                 </ul>
+                <!-- this button hides/reveals more info by toggling .hide in js -->
+                <button class="btn btn-outline-success shadow-none" id="more-news" type="button">
+                    Show More</button>
             </div>
         </div>
 
@@ -81,14 +80,14 @@
 
         <div class="card all-cards">
             <div class="card-body">
-                <!-- new ids to work with -->
                 <div class="card-title" id="local-testing">Testing in Your State</div>
                 <hr>
+                <!-- .hide toggle class -->
                 <ul class="hide" id="test-list">
                     <!-- dynamically filled -->
                 </ul>
-                <!-- this button hides/reveals more info by toggling classes in js -->
-                <button class="btn btn-outline-success shadow-none" id="show-more" type="button">
+                <!-- button toggles .hide -->
+                <button class="btn btn-outline-success shadow-none" id="more-tests" type="button">
                     Show More</button>
             </div>
         </div>

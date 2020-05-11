@@ -21,7 +21,7 @@ $.getJSON(state).done(function (location) {
         // array to hold urls
         let newsLinks = [];
         // loop through response, grab top 5 article titles & their urls
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < response.articles.length; i++) {
             newsTitles[i] = response.articles[i].title;
             newsLinks[i] = response.articles[i].url;
         }
@@ -29,7 +29,7 @@ $.getJSON(state).done(function (location) {
         // Thanks to a previous teacher at Sac City, Mathew Phillips,
         // for answering my email about this subject in old notes!
 
-        // loop from end of array to index 1
+        // loop from end of array to index 1, not 0
         for (i = newsTitles.length - 1; i > 0; i--) {
             // generate random number from 0 to last index, first pass is 0 to 4,
             // with each pass of loop, decrement highest possible value for j
@@ -51,7 +51,7 @@ $.getJSON(state).done(function (location) {
         // arrays are now shuffled in the same manner,
         // display in html, set link attributes
         for (i = 0; i < newsTitles.length; i++) {
-            $("#news-item-" + i).text(newsTitles[i]).attr("href", newsLinks[i]);
+            $("#news-list").append("<li><a href=" + newsLinks[i] + ">" + newsTitles[i] + "</a></li>");
         }
     });
 
@@ -67,14 +67,12 @@ $.getJSON(state).done(function (location) {
     });
 
     // Crowdsourced API for local testing resources. Responses are statewide.
-    // This response is pretty long for big states like CA. Make it smaller? How?
     let localTesting = "https://covid-19-testing.github.io/locations/" + userState + "/complete.json";
     $.ajax({
         url: localTesting,
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        console.log(response.length);
 
         // array to hold listing names
         let testingSites = [];
@@ -87,7 +85,9 @@ $.getJSON(state).done(function (location) {
             testingNumbers[i] = response[i].phones[0].number;
             // some entries have no phone number, so skip those
             if (testingNumbers[i] !== "None") {
-                $("#test-list").append("<li>" + (testingSites[i] + ": " + testingNumbers[i]) + "</li>");
+                // append li's from arrays with some styling
+                $("#test-list").append("<li><span style='font-weight: 500'>" + testingSites[i] +
+                    ": </span>" + testingNumbers[i] + "</li>");
             }
             else {
                 console.log("No Phone Available");
@@ -96,11 +96,24 @@ $.getJSON(state).done(function (location) {
     });
 });
 
-// Show More button listener toggles .hide, creating animation effect (jQuery UI)
-$("#show-more").click(function () {
+// News Section Show More button listener toggles .hide, 
+// creating animation effect (jQuery UI)
+$("#more-news").click(function () {
     // add/remove .hide, sliding info in/out of view
+    $("#news-list").toggleClass("hide", 800);
+    if ($("#news-list").hasClass("hide")) {
+        // conditional to change button text based on .hide
+        $(this).text("Show Less");
+    }
+    else {
+        $(this).text("Show More");
+    }
+});
+
+// Show More button listener toggles .hide,
+// same steps as above
+$("#more-tests").click(function () {
     $("#test-list").toggleClass("hide", 800);
-    // conditional to change button text based on .hide
     if ($("#test-list").hasClass("hide")) {
         $(this).text("Show Less");
     }
