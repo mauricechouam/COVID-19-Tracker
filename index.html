@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Our CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Covid-Commu-Dash</title>
@@ -20,10 +23,8 @@
             id tags to set size in css, probably a better way than this though -->
         <img src="./assets/image/covid-commu-3.png" alt="Covid-Commu-Dash Logo" class="mx-auto d-block"
             id="cov-com-text">
-        <!-- <img src="./assets/image/covid-commu-icon.png" alt="Covid-Commu-Dash Logo" class="mx-auto d-block"
-                id="cov-com-icon"> -->
+
     </div>
-    <!-- </nav> -->
 
     <div class="row">&nbsp;</div>
 
@@ -44,7 +45,6 @@
                 <p>Possibly a map showing useful places related to covid wellness or
                     just getting some services or food.
                     <a href="https://www.mapbox.com">mapbox.com</a> might be the way to go</p>
-                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us"></div>
             </div>
         </div>
 
@@ -84,10 +84,12 @@
                 <!-- new ids to work with -->
                 <div class="card-title" id="local-testing">Testing in Your State</div>
                 <hr>
-                <ul id="test-list">
+                <ul class="hide" id="test-list">
                     <!-- dynamically filled -->
                 </ul>
-
+                <!-- this button hides/reveals more info by toggling classes in js -->
+                <button class="btn btn-outline-success" id="show-more" type="button">
+                    Show More</button>
             </div>
         </div>
 

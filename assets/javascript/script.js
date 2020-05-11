@@ -95,3 +95,16 @@ $.getJSON(state).done(function (location) {
         }
     });
 });
+
+// Show More button listener toggles .hide, creating animation effect (jQuery UI)
+$("#show-more").click(function () {
+    // add/remove .hide, sliding info in/out of view
+    $("#test-list").toggleClass("hide", 750);
+    // conditional to change button text based on .hide
+    if ($("#test-list").hasClass("hide")) {
+        $(this).text("Show Less");
+    }
+    else {
+        $(this).text("Show More");
+    }
+});

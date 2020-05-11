@@ -16,14 +16,17 @@
     margin: -20px 0;
 }
 
-.jumbotron #cov-com-icon {
-    max-height: 15%;
-    max-width: 15%;
-}
-
 /* Search Button area */ 
 #search-card {
     border-style: none;
+}
+
+/* Cards */ 
+/* trim them up */ 
+.all-cards {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
 }
 
 .search-button {
@@ -44,10 +47,14 @@
     font-weight: 500;
 }
 
-/* Cards */ 
-/* trim them up */ 
-.all-cards {
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
+/* Show More button, Testing Section */ 
+#show-more {
+    margin-left: 40px;
+}
+
+/* Show More Button*/ 
+/* .hide & button text toggled dynamically in js */ 
+.hide {
+    height: 250px;
+    overflow: hidden;
 }
