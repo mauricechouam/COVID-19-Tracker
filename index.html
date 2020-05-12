@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,38 +28,9 @@
 
     <div class="container">
 
-        <div class="card" id="search-card">
-            <div class="card-body">
-                <button class="btn btn-lg btn-block btn-success search-button">Find Local Information</button>
-            </div>
-        </div>
-
         <div class="row">&nbsp;</div>
 
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">Map</div>
-                <hr>
-                <p>Possibly a map showing useful places related to covid wellness or
-                    just getting some services or food.
-                    <a href="https://www.mapbox.com">mapbox.com</a> might be the way to go</p>
-            </div>
-        </div>
-
-        <div class="row">&nbsp;</div>
-
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">Recent Cases / Local Situation</div>
-                <hr>
-                <p>A look at the data trends in the area. New cases etc.
-                </p>
-            </div>
-        </div>
-
-        <div class="row">&nbsp;</div>
-
-        <!-- THIS is what I have been working on, News and Local Testing -->
+        <!-- News and Local Testing -->
         <div class="card all-cards">
             <div class="card-body">
                 <div class="card-title" id="news">News Section</div>
@@ -94,14 +63,86 @@
 
         <div class="row">&nbsp;</div>
 
+        <!-- NEW Feature - Select State if IP-API.org can't
+            detect where you are (VPN or mobile data network) -->
+        <div id="user-search">
+            <p>Not Seeing Local Info?</p>
+            <div class="dropdown">
+                <button class="btn btn-sm btn-success shadow-none dropdown-toggle" id="dropdownMenuButton" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Your State
+                </button>
+                <div class="dropdown-menu pre-scrollable state-hide" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" value="no">Select State</a>
+                    <a class="dropdown-item" value="alabama">Alabama</a>
+                    <a class="dropdown-item" value="alaska">Alaska</a>
+                    <a class="dropdown-item" value="arkansas">Arkansas</a>
+                    <a class="dropdown-item" value="california">California</a>
+                    <a class="dropdown-item" value="colorado">Colorado</a>
+                    <a class="dropdown-item" value="connecticut">Connecticut</a>
+                    <a class="dropdown-item" value="delaware">Delaware</a>
+                    <a class="dropdown-item" value="florida">Florida</a>
+                    <a class="dropdown-item" value="georgia">Georgia</a>
+                    <a class="dropdown-item" value="hawaii">Hawaii</a>
+                    <a class="dropdown-item" value="idaho">Idaho</a>
+                    <a class="dropdown-item" value="illinois">Illinois</a>
+                    <a class="dropdown-item" value="indiana">Indiana</a>
+                    <a class="dropdown-item" value="iowa">Iowa</a>
+                    <a class="dropdown-item" value="kansas">Kansas</a>
+                    <a class="dropdown-item" value="kentucky">Kentucky</a>
+                    <a class="dropdown-item" value="louisiana">Louisiana</a>
+                    <a class="dropdown-item" value="maine">Maine</a>
+                    <a class="dropdown-item" value="maryland">Maryland</a>
+                    <a class="dropdown-item" value="massachusetts">Massachusetts</a>
+                    <a class="dropdown-item" value="michigan">Michigan</a>
+                    <a class="dropdown-item" value="minnesota">Minnesota</a>
+                    <a class="dropdown-item" value="mississippi">Mississippi</a>
+                    <a class="dropdown-item" value="missouri">Missouri</a>
+                    <a class="dropdown-item" value="montana">Montana</a>
+                    <a class="dropdown-item" value="nebraska">Nebraska</a>
+                    <a class="dropdown-item" value="nevada">Nevada</a>
+                    <a class="dropdown-item" value="new-hampshire">New Hampshire</a>
+                    <a class="dropdown-item" value="new-jersey">New Jersey</a>
+                    <a class="dropdown-item" value="new-mexico">New Mexico</a>
+                    <a class="dropdown-item" value="new-york">New York</a>
+                    <a class="dropdown-item" value="ohio">Ohio</a>
+                    <a class="dropdown-item" value="oklahoma">Oklahoma</a>
+                    <a class="dropdown-item" value="oregon">Oregon</a>
+                    <a class="dropdown-item" value="pennsylvania">Pennsylvania</a>
+                    <a class="dropdown-item" value="rhode-island">Rhode Island</a>
+                    <a class="dropdown-item" value="south-carolina">South Carolina</a>
+                    <a class="dropdown-item" value="south-dakota">South Dakoto</a>
+                    <a class="dropdown-item" value="tennessee">Tennessee</a>
+                    <a class="dropdown-item" value="texas">Texas</a>
+                    <a class="dropdown-item" value="utah">Utah</a>
+                    <a class="dropdown-item" value="vermont">Vermont</a>
+                    <a class="dropdown-item" value="virginia">Virginia</a>
+                    <a class="dropdown-item" value="washington">Washington</a>
+                    <a class="dropdown-item" value="west-virginia">West Virginia</a>
+                    <a class="dropdown-item" value="wisconsin">Wisonsin</a>
+                    <a class="dropdown-item" value="wyoming">Wyoming</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">&nbsp;</div>
+
     </div>
 
     <!-- main jQuery library -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <!-- jQuery UI -->
+    <!-- jQuery UI (must have for Show More buttons) -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Popper.js (must have for Bootstrap.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap.js (must have for State dropdown) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
     <!-- my script.js -->
     <script src="./assets/javascript/script.js"></script>
 

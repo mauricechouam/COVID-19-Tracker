@@ -16,15 +16,17 @@
     margin: -20px 0;
 }
 
-/* Search Button area */ 
-#search-card {
-    border-style: none;
+/* Select State Section */ 
+#user-search {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+    font-weight: 500;
 }
 
 /* Cards */ 
 /* trim them up */ 
 .all-cards {
-    display: block;
     margin: 0 auto;
     max-width: 80%;
 }
@@ -36,7 +38,7 @@
     border-radius: 20px;
 }
 
-/* News  & Testing Section */ 
+/* News & Testing Section */ 
 #news-list li, #test-list li {
     list-style: none;
     padding-bottom: 10px;

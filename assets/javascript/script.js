@@ -1,14 +1,35 @@
-// IP Geolocation: https://ip-api.com/
-// This will set a var for us to plug into other APIs
-let state = "http://ip-api.com/json/?fields=regionName";
-$.getJSON(state).done(function (location) {
-    // vars to get just the city from ip-api JSON
-    state = location.regionName;
-    // need a var to hold value of state, in lower case
-    let userState = state.toLowerCase();
-    console.log(userState);
+// Global var used in ajax calls and Select State
+let userState = "";
 
-    // NewsAPI.org to update the News Section
+$(document).ready(function () {
+    // gives value to userState
+    ajaxState();
+    // fill News & Testing sections (needs userState)
+    // setTimeouts to give ajax calls time to respond
+    setTimeout(function () {
+        ajaxNews();
+    }, 300)
+    setTimeout(function () {
+        ajaxTesting();
+    }, 300)
+});
+
+// ajaxResource() gets userState for NewsAPI and Testing API below
+function ajaxState() {
+    // first, IP-API.org to get
+    let state = "http://ip-api.com/json/?fields=regionName";
+    $.getJSON(state).done(function (location) {
+        // vars to get just the city from ip-api JSON
+        state = location.regionName;
+        // need a var to hold value of state, in lower case
+        userState = state.toLowerCase();
+        console.log(userState);
+    });
+}
+
+// ajaxNews() fills News Section
+function ajaxNews() {
+    // NewsAPI.org
     let newsURL = "http://newsapi.org/v2/top-headlines?country=us&q=coronavirus&sortBy=popularity&apiKey=5f16e289ba95422780d31a86b588ae1d";
     $.ajax({
         url: newsURL,
@@ -28,7 +49,6 @@ $.getJSON(state).done(function (location) {
         // Shuffling the two arrays: Fisher-Yates Algorithm
         // Thanks to a previous teacher at Sac City, Mathew Phillips,
         // for answering my email about this subject in old notes!
-
         // loop from end of array to index 1, not 0
         for (i = newsTitles.length - 1; i > 0; i--) {
             // generate random number from 0 to last index, first pass is 0 to 4,
@@ -54,18 +74,10 @@ $.getJSON(state).done(function (location) {
             $("#news-list").append("<li><a href=" + newsLinks[i] + ">" + newsTitles[i] + "</a></li>");
         }
     });
+}
 
-    // Tinkering with a second call to pull local news articles with the state info from https://www.ip-api.com
-    // this works but the response is general, not covid. need to pair it with coronavirus keyword
-    // emailed News API for details on concatenating a url with multiple search terms. we'll see...
-    let cityURL = "http://newsapi.org/v2/top-headlines?country=us&q=" + userState + "&sortBy=popularity&apiKey=5f16e289ba95422780d31a86b588ae1d";
-    $.ajax({
-        url: cityURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-    });
-
+// ajaxTesting() fills Testing Section
+function ajaxTesting() {
     // Crowdsourced API for local testing resources. Responses are statewide.
     let localTesting = "https://covid-19-testing.github.io/locations/" + userState + "/complete.json";
     $.ajax({
@@ -78,6 +90,8 @@ $.getJSON(state).done(function (location) {
         let testingSites = [];
         // array for their phone numbers
         let testingNumbers = [];
+        // clear section in case this is not the first ajaxTesting() call
+        $("#test-list").empty();
         // loop to fill listings from response, display if valid
         for (i = 0; i < response.length; i++) {
             // fill sites & numbers arrays
@@ -94,6 +108,15 @@ $.getJSON(state).done(function (location) {
             }
         }
     });
+}
+
+
+// Select State button captures state name
+$(".dropdown-item").click(function () {
+    // capture value in Global userState
+    userState = $(this).attr("value");
+    console.log(userState);
+    ajaxTesting();
 });
 
 // News Section Show More button listener toggles .hide, 
@@ -111,7 +134,6 @@ $("#more-news").click(function () {
 });
 
 // Show More button listener toggles .hide,
-// same steps as above
 $("#more-tests").click(function () {
     $("#test-list").toggleClass("hide", 800);
     if ($("#test-list").hasClass("hide")) {
