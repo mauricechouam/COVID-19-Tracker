@@ -44,10 +44,10 @@ $(document).ready(function () {
     // setTimeouts to give ajax calls time to respond
     setTimeout(function () {
         ajaxNews();
-    }, 300)
+    }, 750)
     setTimeout(function () {
         ajaxTesting();
-    }, 300)
+    }, 750)
 });
 
 // ajaxResource() gets userState for NewsAPI and Testing API below

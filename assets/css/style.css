@@ -74,7 +74,7 @@ body {
 
 /* .hide & button text toggled dynamically in js */ 
 .hide {
-    height: 255px;
+    height: 265px;
     overflow: hidden;
 }
     

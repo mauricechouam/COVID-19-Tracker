@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Font Pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Mapbox API -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
-    <!-- Mapbox CSS -->
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet"/>
     <!-- Project Title -->
     <title>Covid-Commu-Dash</title>
-
 </head>
 <body>
-
     <!-- Main NavBar -->
     <nav class="navbar navbar-light navbar-collapse bg-custom-1">
         <a class="navbar-brand justify-content-between" href="#">
-        <img src="assets/images/covid-commu-logo.png" width="335" height="30" alt="">
-        </div>
-        </div>
+            <img src="assets/images/covid-commu-logo.png" width="335" height="30" alt="">
+            </div>
+            </div>
     </nav>
-
     <!-- Navbar links not working yet -->
     <div class="navbar-collapse collapse">
         <ul class="navbar-nav justify-content-right">
@@ -41,58 +37,24 @@
         </ul>
     </div>
     </nav>
-
     <!-- Map container -->
     <div class="row">&nbsp;</div>
     <div class="container">
         <div id="search-card">
             <div class="card-body">
                 <form>
-                <h4 class="card-text">Location Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="cityInput" placeholder="Enter Country or Provice">
-                    <div class="input-group-append">
-                    <!-- Search Button -->
-                    <button type="submit" id="submitCity" class="btn btn-dark fa fa-search"></button>
-                </div>
-            </div>
-        </form>
-
-    <!-- Map -->
-    <div id="map"></div> 
-
-    <!-- Data Cards 
-    <div class="card-deck">
-        <div class="card bg-custom-1">
-            <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-
-    
-    <div class="card bg-custom-1">
-        <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-   
-
-    <div class="card bg-custom-1">
-        <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-      </div>
-    -->
-
-    <div class="row">&nbsp;</div>
-
+                    <h4 class="card-text">Location Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="cityInput" placeholder="Enter Country or Provice">
+                        <div class="input-group-append">
+                            <!-- Search Button -->
+                            <button type="submit" id="submitCity" class="btn btn-dark fa fa-search"></button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Map -->
+                <div id="map"></div>
+                <div class="row">&nbsp;</div>
     <!-- News and Local Testing -->
     <div class="card all-cards bg-custom-1">
         <div class="card-body">
@@ -107,9 +69,7 @@
                 Show More</button>
         </div>
     </div>
-
     <div class="row">&nbsp;</div>
-
     <div class="card all-cards bg-custom-1">
         <div class="card-body">
             <div class="card-title card-text" id="local-testing">Testing in Your State</div>
@@ -123,16 +83,14 @@
                 Show More</button>
         </div>
     </div>
-
     <div class="row">&nbsp;</div>
-
     <!-- NEW Feature - Select State if IP-API.org can't
         detect where you are (VPN or mobile data network) -->
     <div id="user-search card">
         <p style="color:white;">Not Seeing Local Info?</p>
         <div class="dropdown">
-            <button class="btn btn-sm btn-success shadow-none dropdown-toggle" id="dropdownMenuButton" type="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-sm btn-success shadow-none dropdown-toggle" id="dropdownMenuButton"
+                type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select Your State
             </button>
             <div class="dropdown-menu pre-scrollable state-hide" aria-labelledby="dropdownMenuButton">
@@ -187,37 +145,66 @@
             </div>
         </div>
     </div>
-
     <div class="row">&nbsp;</div>
-
 </div>
-          
-    <!-- Page Break -->
-        <br>
-
-    <!-- Footer -->
-        <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
-        Made with <img style="margin-top: -2px;" width="20" height="20" src="https://img.icons8.com/dusk/64/000000/like.png"/> by <a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb" target="_blank">Chase Johnson,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
-        </p>
-
-    <!-- main jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-     <!-- jQuery UI (must have for Show More buttons) -->
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <!-- Popper.js (must have for Bootstrap.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-     crossorigin="anonymous"></script>
-     <!-- Bootstrap.js (must have for State dropdown) -->
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-     crossorigin="anonymous"></script>
-    <!--- JavaScript -->
-    <script src="assets/javascript/app.js"></script>
-
-
-
+<!-- Page Break -->
+<br>
+<!-- Footer -->
+<p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
+        Made with <img style="margin-top: -2px;" width="20" height="20"
+            src="https://img.icons8.com/dusk/64/000000/like.png" /> by <a
+            style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb"
+            target="_blank">Chase Johnson,</a><a
+            style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+            href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a
+            style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+            href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
+</p>
+</div>
+</div>
+<!-- main jQuery library -->
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<!-- jQuery UI (must have for Show More buttons) -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<!-- Popper.js (must have for Bootstrap.js) -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<!-- Bootstrap.js (must have for State dropdown) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+crossorigin="anonymous"></script>
+<!-- Mapbox API -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+<!--- JavaScript -->
+<script src="assets/javascript/app.js"></script>
 </body>
 </html>
+
+<!-- Data Cards 
+    <div class="card-deck">
+        <div class="card bg-custom-1">
+            <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+       </div>
+    <div class="card bg-custom-1">
+        <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+       </div>
+    <div class="card bg-custom-1">
+        <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+       </div>
+      </div>
+    -->
