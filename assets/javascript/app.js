@@ -1,38 +1,35 @@
-
 // Mapbox API Call 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhc2V5YiIsImEiOiJja2EydmhiMXIwM2Y1M2xzNW5oMnRpYzd5In0.m1vDX_9oLA_Ywa2fa43WXg';
-    var map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
     container: "map", // container id
     style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
-	center: [10, 0], // starting position [lng, lat]
-	zoom: 1.2 // starting zoom 
-	});
-	
+    center: [10, 0], // starting position [lng, lat]
+    zoom: 1.2 // starting zoom 
+});
+
 // Add zoom and rotation controls to the map
 map.addControl(new mapboxgl.NavigationControl());
 
 // Add geolocate control to the map
 map.addControl(
-	new mapboxgl.GeolocateControl({
-	positionOptions: {
-	enableHighAccuracy: true
-	},
-	trackUserLocation: true
-	})
-	);
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    })
+);
 
 // NovelCOV-19 API Call //
 var settings = {
-	"url": "https://corona.lmao.ninja/v2/all",
-	"method": "GET",
-	"timeout": 0,
-  };
+    "url": "https://corona.lmao.ninja/v2/all",
+    "method": "GET",
+    "timeout": 0,
+};
 
 $.ajax(settings).done(function (response) {
-	console.log(response);
-  });
-
-// Davids JS //
+    console.log(response);
+});
 
 // Global var used in ajax calls and Select State
 let userState = "";
@@ -44,7 +41,7 @@ $(document).ready(function () {
     // setTimeouts to give ajax calls time to respond
     setTimeout(function () {
         ajaxNews();
-    }, 750)
+    }, 300)
     setTimeout(function () {
         ajaxTesting();
     }, 750)
@@ -52,7 +49,7 @@ $(document).ready(function () {
 
 // ajaxResource() gets userState for NewsAPI and Testing API below
 function ajaxState() {
-    // first, IP-API.org to get
+    // first, IP-API.com to get
     let state = "http://ip-api.com/json/?fields=regionName";
     $.getJSON(state).done(function (location) {
         // vars to get just the city from ip-api JSON
@@ -112,6 +109,24 @@ function ajaxNews() {
     });
 }
 
+// // some states have no information, so display alternate message
+// if (response[i].name === "No Locations Yet") {
+//     $("#test-list").append("<li style='font-weight: 500'>No current" +
+//         " information is available.</li>");
+//     $("test-list").append("<li style='font-weight: 500'>Please visit" +
+//         " the CDC website.<a href='https://www.cdc.gov/coronavirus/2019-nCoV/index.html'>" +
+//         "www.cdc.gov</a></li>");
+// }
+// // some entries have no phone number, so skip those
+// else if (testingNumbers[i] !== "None") {
+//     // append li's from arrays with some styling
+//     $("#test-list").append("<li><span style='font-weight: 500'>" + testingSites[i] +
+//         ": </span>" + testingNumbers[i] + "</li>");
+// }
+// else {
+//     console.log("No Phone Available");
+// }
+
 // ajaxTesting() fills Testing Section
 function ajaxTesting() {
     // Crowdsourced API for local testing resources. Responses are statewide.
@@ -134,7 +149,15 @@ function ajaxTesting() {
             testingSites[i] = response[i].name;
             testingNumbers[i] = response[i].phones[0].number;
             // some entries have no phone number, so skip those
-            if (testingNumbers[i] !== "None") {
+            // some states have no information, so display alternate message
+            if (response[i].name === "No Locations Yet") {
+                $("#test-list").append("<li style='font-weight: 500'>No current" +
+                    " information is available. <p>Please visit the CDC website. " +
+                    "<a href='https://www.cdc.gov/coronavirus/2019-nCoV/index.html'" +
+                    " target='_blank'>www.cdc.gov</a></p></li>");
+            }
+            // some entries have no phone number, so skip those
+            else if (testingNumbers[i] !== "None") {
                 // append li's from arrays with some styling
                 $("#test-list").append("<li><span style='font-weight: 500'>" + testingSites[i] +
                     ": </span>" + testingNumbers[i] + "</li>");

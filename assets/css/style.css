@@ -1,6 +1,6 @@
 /* Global */ 
 * {
-    max-width: 100vw;
+    max-width: 99vw;
 }
 
 /* Body Background color */ 
@@ -77,4 +77,3 @@ body {
     height: 265px;
     overflow: hidden;
 }
-    
