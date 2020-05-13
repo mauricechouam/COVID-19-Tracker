@@ -53,4 +53,28 @@ body {
     color: white;
 }
 
+/* Davids CSS */ 
+
+/* News & Testing Section */ 
+#news-list li, #test-list li {
+    list-style: none;
+    padding-bottom: 10px;
+    color: white;
+}
+
+#news-list a {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Show More Buttons */ 
+#more-tests, #more-news {
+    margin-left: 40px;
+}
+
+/* .hide & button text toggled dynamically in js */ 
+.hide {
+    height: 255px;
+    overflow: hidden;
+}
     
