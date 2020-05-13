@@ -2,11 +2,25 @@
 * {
     max-width: 99vw;
 }
-
+body{
+    background-color: rgb(245, 247, 248);
+}
 /* Jumbotron */ 
 /* shape it up */ 
 .jumbotron {
     margin: -20px 0 -10px 0;
+    border-bottom: solid rgb(85, 224, 85);
+    background-repeat: repeat;
+
+}
+.clearfix button{
+    padding: 5px;
+    font-size: 20px;
+    margin: 2px;
+    width: 230px;
+    margin-right: 100px;
+    
+
 }
 
 /* text image */ 
@@ -14,6 +28,7 @@
     max-height: 30%;
     max-width: 30%;
     margin: -20px 0;
+   
 }
 
 .jumbotron #cov-com-icon {
@@ -26,12 +41,7 @@
     border-style: none;
 }
 
-.search-button {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 50%;
-    border-radius: 20px;
-}
+
 
 /* Cards */ 
 /* trim them up */ 
@@ -40,3 +50,104 @@
     margin: 0 auto;
     max-width: 80%;
 }
+
+footer{
+    background-color: rgb(209, 195, 195);
+    color: white;
+    text-align: center;
+    border-top: solid rgb(85, 224, 85);
+    padding: 10px;
+    margin-top: 260px;
+    width: 100%;
+  
+}
+input{
+    width: 290px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color: chartreuse;
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     box-shadow: none;
+}
+.clearfix .btn{
+    border-radius: 10px;
+    display: block;
+    margin: 5px;
+   
+}
+
+.search-button:hover,.clearfix .btn:hover{
+    background-color:black
+}
+header .current a{
+    color:#242422;
+    font-weight: bold;
+    
+   }
+
+   .sidenav {
+    height: 100%;
+    width: 22%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(209, 195, 195);
+    border-right:solid rgb(129, 192, 113);
+    
+  }
+
+  
+.sidenav a {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+ padding: 0 50px;
+ 
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 22%; /* Same as the width of the sidenav */
+    margin-right: auto;
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    display: block;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  header, main, footer {
+    padding-left: 240px;
+    }
+    
+.sidenav img{
+display: block;
+ margin-left: auto;
+ 
+}
+.input1{
+    width: 90%;
+
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color: chartreuse;
+    display: block;
+     
+}
+.menu{
+    padding-top: 90px;
+    
+}
+
+
