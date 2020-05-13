@@ -1,42 +1,56 @@
 /* Global */ 
 * {
-    max-width: 99vw;
+    max-width: 100vw;
 }
 
-/* Jumbotron */ 
-/* shape it up */ 
-.jumbotron {
-    margin: -20px 0 -10px 0;
+/* Body Background color */ 
+body {
+    background-color: #1f2328;
 }
 
-/* text image */ 
-.jumbotron #cov-com-text {
-    max-height: 30%;
-    max-width: 30%;
-    margin: -20px 0;
+/* NavBar Styling */
+.navbar .navbar-brand{
+    color: white;
+   }
+
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 80px;
 }
 
-.jumbotron #cov-com-icon {
-    max-height: 15%;
-    max-width: 15%;
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
 }
 
-/* Search Button area */ 
-#search-card {
-    border-style: none;
+/* Map Styling */
+#map {
+    height: 600px;
+    width: auto;
+    border: .5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: gray;
+  }
+
+/* Card Styling */
+.card {
+    background-attachment: #1F1B24;
+    border: .5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.search-button {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 50%;
-    border-radius: 20px;
+/* Card background color*/
+.bg-custom-1 {
+    background-color:#24292E;
+} 
+
+/* Card Text Color */
+.card-text {
+    color: white;
 }
 
-/* Cards */ 
-/* trim them up */ 
-.all-cards {
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
-}
+    

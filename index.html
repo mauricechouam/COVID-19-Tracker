@@ -1,88 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <!-- Font Pack -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Mapbox API -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet"/>
+    <!-- Project Title -->
     <title>Covid-Commu-Dash</title>
 
 </head>
-
 <body>
-    <!-- <nav class="navbar navbar-dark bg-dark"> -->
-    <div class="jumbotron">
-        <!-- .dblock & .mx-auto make the images centered and responsive
-            id tags to set size in css, probably a better way than this though -->
-        <img src="./assets/image/covid-commu-3.png" alt="Covid-Commu-Dash Logo" class="mx-auto d-block"
-            id="cov-com-text">
-        <!-- <img src="./assets/image/covid-commu-icon.png" alt="Covid-Commu-Dash Logo" class="mx-auto d-block"
-                id="cov-com-icon"> -->
+
+    <!-- Main NavBar -->
+    <nav class="navbar navbar-light navbar-collapse bg-custom-1">
+        <a class="navbar-brand justify-content-between" href="#">
+        <img src="assets/images/covid-commu-logo.png" width="335" height="30" alt="">
+        </div>
+        </div>
+    </nav>
+
+    <!-- Navbar links not working yet -->
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav justify-content-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
     </div>
-    <!-- </nav> -->
+    </nav>
+
+    <!-- Map container -->
     <div class="row">&nbsp;</div>
     <div class="container">
-
-        <div class="card" id="search-card">
+        <div id="search-card">
             <div class="card-body">
-                <button class="btn btn-lg btn-block btn-success search-button">Find Local Information</button>
+                <form>
+                <h4 class="card-text">Location Search</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="cityInput" placeholder="Enter Country or Provice">
+                    <div class="input-group-append">
+                    <!-- Search Button -->
+                    <button type="submit" id="submitCity" class="btn btn-dark fa fa-search"></button>
+                </div>
             </div>
+        </form>
+
+    <!-- Map -->
+    <div id="map"></div> 
+
+    <!-- Data Cards -->
+    <div class="card-deck">
+        <div class="card bg-custom-1">
+            <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
+       </div>
 
-        <div class="row">&nbsp;</div>
-
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">Map</div>
-                <hr>
-                <p>Possibly a map showing useful places related to covid wellness or
-                    just getting some services or food.
-                    <a href="https://www.mapbox.com">mapbox.com</a> might be the way to go</p>
-            </div>
+     <!-- Data Cards -->
+    <div class="card bg-custom-1">
+        <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="row">&nbsp;</div>
-
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">Recent Cases / Local Situation</div>
-                <hr>
-                <p>A look at the data trends in the area. New cases etc.
-                </p>
-            </div>
+       </div>
+   
+     <!-- Data Cards -->
+    <div class="card bg-custom-1">
+        <div class="card-body bg-custom-1">
+            <h5 class="card-title card-text">Example Data</h5>
+            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="row">&nbsp;</div>
+       </div>
+      </div>
+          
+    <!-- Page Break -->
+        <br>
 
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">Resources / Local Resources</div>
-                <hr>
-                <p>This section might be harder to fill. Will we have / find the right API resources to pull up local
-                    resources? Or should the goal be to more simply offer CDC / WHO resources along with lighter
-                    material like things to do while sheltering in place?</p>
-
-            </div>
-        </div>
-        <div class="row">&nbsp;</div>
-
-        <div class="card all-cards">
-            <div class="card-body">
-                <div class="card-title">News Section</div>
-                <hr>
-                <p>Found a good starting point for this with the CDC's 2019 Novel Coronavirus API. See script file, open
-                    console.</p>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-
+    <!-- Footer -->
+        <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
+        Made with <img style="margin-top: -2px;" width="20" height="20" src="https://img.icons8.com/dusk/64/000000/like.png"/> by <a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb" target="_blank">Chase Johnson,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
+        </p>
 
     <!-- main jQuery library -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
@@ -90,9 +104,8 @@
     <!-- jQuery UI -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <!-- my script.js -->
-    <script src="./assets/javascript/script.js"></script>
-
+    <!--- Map JS -->
+    <script src="assets/javascript/app.js"></script>
+    
 </body>
-
 </html>
