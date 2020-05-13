@@ -67,9 +67,18 @@ body {
     font-weight: 500;
 }
 
-/* Show More Buttons */ 
-#more-tests, #more-news {
+/* News & Testing Titles, Show More Buttons */ 
+#news, #local-testing, #more-tests, #more-news {
     margin-left: 40px;
+}
+
+#news, #local-testing {
+    font-weight: 500;
+}
+
+/* Dislaying userState, which is toLowerCase() by default */ 
+#your-state {
+    text-transform: capitalize;
 }
 
 /* .hide & button text toggled dynamically in js */ 

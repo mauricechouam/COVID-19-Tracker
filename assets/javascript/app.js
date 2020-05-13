@@ -1,24 +1,48 @@
-// Mapbox API Call 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhc2V5YiIsImEiOiJja2EydmhiMXIwM2Y1M2xzNW5oMnRpYzd5In0.m1vDX_9oLA_Ywa2fa43WXg';
-var map = new mapboxgl.Map({
-    container: "map", // container id
-    style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
-    center: [10, 0], // starting position [lng, lat]
-    zoom: 1.2 // starting zoom 
+// On page load, call functions
+$(document).ready(function () {
+    // get MapBox.com
+    mapBoxCall();
+    // gives value to userState
+    ajaxState();
+    // fill News & Testing sections (needs userState)
+    // setTimeouts to give ajax calls time to respond
+    setTimeout(function () {
+        ajaxNews();
+    }, 300)
+    setTimeout(function () {
+        ajaxTesting();
+    }, 750)
 });
 
-// Add zoom and rotation controls to the map
-map.addControl(new mapboxgl.NavigationControl());
 
-// Add geolocate control to the map
-map.addControl(
-    new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    })
-);
+/* MAP FUNCTIONS */
+
+// Mapbox API Call (now wrapped in function, called in doc.ready)
+function mapBoxCall() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhc2V5YiIsImEiOiJja2EydmhiMXIwM2Y1M2xzNW5oMnRpYzd5In0.m1vDX_9oLA_Ywa2fa43WXg';
+    var map = new mapboxgl.Map({
+        container: "map", // container id
+        style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+        center: [10, 0], // starting position [lng, lat]
+        zoom: 1.2 // starting zoom 
+    });
+
+    // Add zoom and rotation controls to the map
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add geolocate control to the map
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+    );
+}
+
+
+/* NovelCOV Call - Work in Progress - Three Data Cards?*/
 
 // NovelCOV-19 API Call //
 var settings = {
@@ -31,21 +55,11 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 
+
+/* NEWS SECTION */
+
 // Global var used in ajax calls and Select State
 let userState = "";
-
-$(document).ready(function () {
-    // gives value to userState
-    ajaxState();
-    // fill News & Testing sections (needs userState)
-    // setTimeouts to give ajax calls time to respond
-    setTimeout(function () {
-        ajaxNews();
-    }, 300)
-    setTimeout(function () {
-        ajaxTesting();
-    }, 750)
-});
 
 // ajaxResource() gets userState for NewsAPI and Testing API below
 function ajaxState() {
@@ -109,23 +123,7 @@ function ajaxNews() {
     });
 }
 
-// // some states have no information, so display alternate message
-// if (response[i].name === "No Locations Yet") {
-//     $("#test-list").append("<li style='font-weight: 500'>No current" +
-//         " information is available.</li>");
-//     $("test-list").append("<li style='font-weight: 500'>Please visit" +
-//         " the CDC website.<a href='https://www.cdc.gov/coronavirus/2019-nCoV/index.html'>" +
-//         "www.cdc.gov</a></li>");
-// }
-// // some entries have no phone number, so skip those
-// else if (testingNumbers[i] !== "None") {
-//     // append li's from arrays with some styling
-//     $("#test-list").append("<li><span style='font-weight: 500'>" + testingSites[i] +
-//         ": </span>" + testingNumbers[i] + "</li>");
-// }
-// else {
-//     console.log("No Phone Available");
-// }
+/* TESTING SECTION */
 
 // ajaxTesting() fills Testing Section
 function ajaxTesting() {
@@ -141,8 +139,11 @@ function ajaxTesting() {
         let testingSites = [];
         // array for their phone numbers
         let testingNumbers = [];
-        // clear section in case this is not the first ajaxTesting() call
+        // clear section & state in case this is not the first ajaxTesting() call
         $("#test-list").empty();
+        $("#your-state").empty();
+        // display state in card-title
+        $("#your-state").text(" - " + userState);
         // loop to fill listings from response, display if valid
         for (i = 0; i < response.length; i++) {
             // fill sites & numbers arrays
