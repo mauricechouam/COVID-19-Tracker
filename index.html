@@ -45,150 +45,147 @@
     <!-- Map container -->
     <div class="row">&nbsp;</div>
     <div class="container">
-        <div id="search-card">
-            <div class="card-body">
-                <form>
-                    <h4 class="card-text">Location Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="cityInput" placeholder="Enter Country or Provice">
-                        <div class="input-group-append">
-                            <!-- Search Button -->
-                            <button type="submit" id="submitCity" class="btn btn-dark fa fa-search"></button>
-                        </div>
-                    </div>
-                </form>
-
-                <!-- Map -->
-                <div id="map"></div>
-
-
-                <div class="row">&nbsp;</div>
-
-                <!-- News and Local Testing -->
-                <div class="card all-cards bg-custom-1">
-                    <div class="card-body">
-                        <div class="card-title card-text" id="news">National Covid-19 Headlines</div>
-                        <hr style="color: white;">
-                        <!-- .hide is the toggle class, important! -->
-                        <ul class="hide" id="news-list">
-                            <!-- dynamically filled -->
-                        </ul>
-                        <!-- this button hides/reveals more info by toggling .hide in js -->
-                        <button class="btn btn-outline-success shadow-none" id="more-news" type="button">
-                            Show More</button>
+        <div class="card-body">
+            <form>
+                <h4 class="card-text">Location Search</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="cityInput" placeholder="Enter Country or Provice">
+                    <div class="input-group-append">
+                        <!-- Search Button -->
+                        <button type="submit" id="submitCity" class="btn btn-dark"><i
+                                class="fas fa-search"></i></button>
                     </div>
                 </div>
+            </form>
 
-                <div class="row">&nbsp;</div>
+            <!-- Map -->
+            <div id="map"></div>
 
-                <div class="card all-cards bg-custom-1">
-                    <div class="card-body">
-                        <div class="card-title card-text" id="local-testing">Testing in Your State
-                            <!-- span filled dynamically with user's state -->
-                            <span id="your-state"></span>
-                        </div>
-                        <hr>
-                        <!-- .hide toggle class -->
-                        <ul class="hide" id="test-list">
-                            <!-- dynamically filled -->
-                        </ul>
-                        <!-- button toggles .hide -->
-                        <button class="btn btn-outline-success shadow-none" id="more-tests" type="button">
-                            Show More</button>
-                    </div>
+            <div class="row">&nbsp;</div>
+
+            <!-- News and Local Testing -->
+            <div class="card bg-custom-1">
+                <div class="card-body">
+                    <div class="card-title card-text" id="news">National Covid-19 Headlines</div>
+                    <hr style="color: white;">
+                    <!-- .hide is the toggle class, important! -->
+                    <ul class="hide" id="news-list">
+                        <!-- dynamically filled -->
+                    </ul>
+                    <!-- this button hides/reveals more info by toggling .hide in js -->
+                    <button class="btn btn-outline-success shadow-none" id="more-news" type="button">
+                        Show More</button>
                 </div>
-
-                <div class="row">&nbsp;</div>
-
-                <!-- Select State if IP-API.org can't
-                    detect where you are (VPN or mobile data network) -->
-                <div id="user-search">
-                    <!-- Flex! -->
-                    <div class="d-flex justify-content-center">
-                        <p style="color:white;">Not Seeing Local Info?</p>
-                    </div>
-                    <div class="dropdown d-flex justify-content-center">
-                        <button class="btn btn-sm btn-success shadow-none dropdown-toggle" id="dropdownMenuButton"
-                            type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select Your State
-                        </button>
-                        <div class="dropdown-menu pre-scrollable state-hide" aria-labelledby="dropdownMenuButton">
-                            <!-- Some two word states are separated by an underscore,
-                                others are a hyphen. Hopefully they leave it as is for now. -->
-                            <a class="dropdown-item" value="no">Select State</a>
-                            <a class="dropdown-item" value="alabama">Alabama</a>
-                            <a class="dropdown-item" value="alaska">Alaska</a>
-                            <a class="dropdown-item" value="arizona">Arizona</a>
-                            <a class="dropdown-item" value="arkansas">Arkansas</a>
-                            <a class="dropdown-item" value="california">California</a>
-                            <a class="dropdown-item" value="colorado">Colorado</a>
-                            <a class="dropdown-item" value="connecticut">Connecticut</a>
-                            <a class="dropdown-item" value="delaware">Delaware</a>
-                            <a class="dropdown-item" value="florida">Florida</a>
-                            <a class="dropdown-item" value="georgia">Georgia</a>
-                            <a class="dropdown-item" value="hawaii">Hawaii</a>
-                            <a class="dropdown-item" value="idaho">Idaho</a>
-                            <a class="dropdown-item" value="illinois">Illinois</a>
-                            <a class="dropdown-item" value="indiana">Indiana</a>
-                            <a class="dropdown-item" value="iowa">Iowa</a>
-                            <a class="dropdown-item" value="kansas">Kansas</a>
-                            <a class="dropdown-item" value="kentucky">Kentucky</a>
-                            <a class="dropdown-item" value="louisiana">Louisiana</a>
-                            <a class="dropdown-item" value="maine">Maine</a>
-                            <a class="dropdown-item" value="maryland">Maryland</a>
-                            <a class="dropdown-item" value="massachusetts">Massachusetts</a>
-                            <a class="dropdown-item" value="michigan">Michigan</a>
-                            <a class="dropdown-item" value="minnesota">Minnesota</a>
-                            <a class="dropdown-item" value="mississippi">Mississippi</a>
-                            <a class="dropdown-item" value="missouri">Missouri</a>
-                            <a class="dropdown-item" value="montana">Montana</a>
-                            <a class="dropdown-item" value="nebraska">Nebraska</a>
-                            <a class="dropdown-item" value="nevada">Nevada</a>
-                            <a class="dropdown-item" value="new_hampshire">New Hampshire</a>
-                            <a class="dropdown-item" value="new-jersey">New Jersey</a>
-                            <a class="dropdown-item" value="new-mexico">New Mexico</a>
-                            <a class="dropdown-item" value="new-york">New York</a>
-                            <a class="dropdown-item" value="north-carolina">North Carolina</a>
-                            <a class="dropdown-item" value="north_dakota">North Dakota</a>
-                            <a class="dropdown-item" value="ohio">Ohio</a>
-                            <a class="dropdown-item" value="oklahoma">Oklahoma</a>
-                            <a class="dropdown-item" value="oregon">Oregon</a>
-                            <a class="dropdown-item" value="pennsylvania">Pennsylvania</a>
-                            <a class="dropdown-item" value="rhode_island">Rhode Island</a>
-                            <a class="dropdown-item" value="south_carolina">South Carolina</a>
-                            <a class="dropdown-item" value="south_dakota">South Dakota</a>
-                            <a class="dropdown-item" value="tennessee">Tennessee</a>
-                            <a class="dropdown-item" value="texas">Texas</a>
-                            <a class="dropdown-item" value="utah">Utah</a>
-                            <a class="dropdown-item" value="vermont">Vermont</a>
-                            <a class="dropdown-item" value="virginia">Virginia</a>
-                            <a class="dropdown-item" value="washington">Washington</a>
-                            <a class="dropdown-item" value="west_virginia">West Virginia</a>
-                            <a class="dropdown-item" value="wisconsin">Wisconsin</a>
-                            <a class="dropdown-item" value="wyoming">Wyoming</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">&nbsp;</div>
-
             </div>
 
-            <!-- Page Break -->
-            <br>
+            <div class="row">&nbsp;</div>
 
-            <!-- Footer -->
-            <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
-                    Made with <img style="margin-top: -2px;" width="20" height="20"
-                        src="https://img.icons8.com/dusk/64/000000/like.png" /> by <a
-                        style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb"
-                        target="_blank">Chase Johnson,</a><a
-                        style="font-size: 15px; color: white; letter-spacing: 0.1em;"
-                        href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a
-                        style="font-size: 15px; color: white; letter-spacing: 0.1em;"
-                        href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
-            </p>
+            <div class="card bg-custom-1">
+                <div class="card-body">
+                    <div class="card-title card-text" id="local-testing">Testing in Your State
+                        <!-- span filled dynamically with user's state -->
+                        <span id="your-state"></span>
+                    </div>
+                    <hr>
+                    <!-- .hide toggle class -->
+                    <ul class="hide" id="test-list">
+                        <!-- dynamically filled -->
+                    </ul>
+                    <!-- button toggles .hide -->
+                    <button class="btn btn-outline-success shadow-none" id="more-tests" type="button">
+                        Show More</button>
+                </div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+
+            <!-- Select State if IP-API.org can't
+                    detect where you are (VPN or mobile data network) -->
+            <div id="user-search">
+                <!-- Flex! -->
+                <div class="d-flex justify-content-center">
+                    <p style="color:white;">Not Seeing Local Info?</p>
+                </div>
+                <div class="dropdown d-flex justify-content-center">
+                    <button class="btn btn-sm btn-success shadow-none dropdown-toggle" id="dropdownMenuButton"
+                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Your State
+                    </button>
+                    <div class="dropdown-menu pre-scrollable state-hide" aria-labelledby="dropdownMenuButton">
+                        <!-- Some two word states are separated by an underscore,
+                                others are a hyphen. Hopefully they leave it as is for now. -->
+                        <a class="dropdown-item" value="no">Select State</a>
+                        <a class="dropdown-item" value="alabama">Alabama</a>
+                        <a class="dropdown-item" value="alaska">Alaska</a>
+                        <a class="dropdown-item" value="arizona">Arizona</a>
+                        <a class="dropdown-item" value="arkansas">Arkansas</a>
+                        <a class="dropdown-item" value="california">California</a>
+                        <a class="dropdown-item" value="colorado">Colorado</a>
+                        <a class="dropdown-item" value="connecticut">Connecticut</a>
+                        <a class="dropdown-item" value="delaware">Delaware</a>
+                        <a class="dropdown-item" value="florida">Florida</a>
+                        <a class="dropdown-item" value="georgia">Georgia</a>
+                        <a class="dropdown-item" value="hawaii">Hawaii</a>
+                        <a class="dropdown-item" value="idaho">Idaho</a>
+                        <a class="dropdown-item" value="illinois">Illinois</a>
+                        <a class="dropdown-item" value="indiana">Indiana</a>
+                        <a class="dropdown-item" value="iowa">Iowa</a>
+                        <a class="dropdown-item" value="kansas">Kansas</a>
+                        <a class="dropdown-item" value="kentucky">Kentucky</a>
+                        <a class="dropdown-item" value="louisiana">Louisiana</a>
+                        <a class="dropdown-item" value="maine">Maine</a>
+                        <a class="dropdown-item" value="maryland">Maryland</a>
+                        <a class="dropdown-item" value="massachusetts">Massachusetts</a>
+                        <a class="dropdown-item" value="michigan">Michigan</a>
+                        <a class="dropdown-item" value="minnesota">Minnesota</a>
+                        <a class="dropdown-item" value="mississippi">Mississippi</a>
+                        <a class="dropdown-item" value="missouri">Missouri</a>
+                        <a class="dropdown-item" value="montana">Montana</a>
+                        <a class="dropdown-item" value="nebraska">Nebraska</a>
+                        <a class="dropdown-item" value="nevada">Nevada</a>
+                        <a class="dropdown-item" value="new_hampshire">New Hampshire</a>
+                        <a class="dropdown-item" value="new-jersey">New Jersey</a>
+                        <a class="dropdown-item" value="new-mexico">New Mexico</a>
+                        <a class="dropdown-item" value="new-york">New York</a>
+                        <a class="dropdown-item" value="north-carolina">North Carolina</a>
+                        <a class="dropdown-item" value="north_dakota">North Dakota</a>
+                        <a class="dropdown-item" value="ohio">Ohio</a>
+                        <a class="dropdown-item" value="oklahoma">Oklahoma</a>
+                        <a class="dropdown-item" value="oregon">Oregon</a>
+                        <a class="dropdown-item" value="pennsylvania">Pennsylvania</a>
+                        <a class="dropdown-item" value="rhode_island">Rhode Island</a>
+                        <a class="dropdown-item" value="south_carolina">South Carolina</a>
+                        <a class="dropdown-item" value="south_dakota">South Dakota</a>
+                        <a class="dropdown-item" value="tennessee">Tennessee</a>
+                        <a class="dropdown-item" value="texas">Texas</a>
+                        <a class="dropdown-item" value="utah">Utah</a>
+                        <a class="dropdown-item" value="vermont">Vermont</a>
+                        <a class="dropdown-item" value="virginia">Virginia</a>
+                        <a class="dropdown-item" value="washington">Washington</a>
+                        <a class="dropdown-item" value="west_virginia">West Virginia</a>
+                        <a class="dropdown-item" value="wisconsin">Wisconsin</a>
+                        <a class="dropdown-item" value="wyoming">Wyoming</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+
         </div>
+
+        <!-- Page Break -->
+        <br>
+
+        <!-- Footer -->
+        <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
+                Made with <img style="margin-top: -2px;" width="20" height="20"
+                    src="https://img.icons8.com/dusk/64/000000/like.png" /> by <a
+                    style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb"
+                    target="_blank">Chase Johnson,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+                    href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a
+                    style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+                    href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
+        </p>
     </div>
 
     <!-- main jQuery library -->
