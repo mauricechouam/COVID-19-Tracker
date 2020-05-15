@@ -3,59 +3,105 @@
     max-width: 99vw;
 }
 
-/* Jumbotron */ 
-/* shape it up */ 
-.jumbotron {
-    margin: -20px 0 -10px 0;
+/* Body Background color */ 
+body {
+    background-color: #1f2328;
 }
 
-/* text image */ 
-.jumbotron #cov-com-text {
-    max-height: 30%;
-    max-width: 30%;
-    margin: -20px 0;
+/* NavBar Styling */
+.navbar .navbar-brand{
+    color: white;
+   }
+
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 80px;
 }
 
-/* Select State Section */ 
-#user-search {
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
     text-align: center;
+}
+
+/* Map Styling */
+#map {
+    height: 600px;
+    width: auto;
+    border: .5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: gray;
+  }
+
+/* Card Styling */
+.card {
+    background-attachment: #1F1B24;
+    border: .5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Card background color*/
+.bg-custom-1 {
+    background-color:#24292E;
+} 
+
+/* Card Text Color */
+.card-text {
+    color: white;
+}
+
+/* David's CSS */ 
+/* .hidden hides a MapBox component that
+    cannot be removed without breaking map */ 
+.hidden {
+    display: none;
+}
+
+/* Stats Cards, dynamic fill - New  */ 
+.squeeze {
+    max-width: 90%;
     margin: 0 auto;
-    max-width: 50%;
+}
+
+/* For dynamically created stats */ 
+.cards-p{
     font-weight: 500;
-}
-
-/* Cards */ 
-/* trim them up */ 
-.all-cards {
-    margin: 0 auto;
-    max-width: 80%;
-}
-
-.search-button {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 50%;
-    border-radius: 20px;
+    text-align: center;
+    margin-top: -8px;
 }
 
 /* News & Testing Section */ 
-#news-list li, #test-list li {
+#news-list li, #test-list li, #more-list li {
     list-style: none;
     padding-bottom: 10px;
+    color: white;
 }
 
-#news-list a {
-    color: #333 ;
+#news-list a, #more-list a {
+    color: #ffffff;
     font-weight: 500;
 }
 
-/* Show More Buttons */ 
-#more-tests, #more-news {
+/* News & Testing Titles, Show More Buttons, Additional Resources*/ 
+#news, #local-testing, #more-tests, 
+#more-news, #more-resources {
     margin-left: 40px;
+}
+
+#news, #local-testing, #more-resources {
+    font-weight: 500;
+}
+
+/* Dislaying userState, which is toLowerCase() by default */ 
+#your-state {
+    text-transform: capitalize;
 }
 
 /* .hide & button text toggled dynamically in js */ 
 .hide {
-    height: 255px;
+    height: 265px;
     overflow: hidden;
 }
