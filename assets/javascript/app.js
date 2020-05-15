@@ -4,8 +4,12 @@ $(document).ready(function () {
     mapBoxCall();
     // gives value to userState
     ajaxState();
-    // fill News & Testing sections (needs userState)
+
+    // fill News, Testing  & Data Cards (needs userState)
     // setTimeouts to give ajax calls time to respond
+    setTimeout(function () {
+        stateStatsCall();
+    }, 300)
     setTimeout(function () {
         ajaxNews();
     }, 300)
@@ -14,6 +18,8 @@ $(document).ready(function () {
     }, 750)
 });
 
+// Global var used in ajax calls and Select State Dropdown
+let userState = "";
 
 /* MAP FUNCTIONS */
 
@@ -41,25 +47,82 @@ function mapBoxCall() {
     );
 }
 
+// NEW Listener to capture search bar input
+// Should we change ids in html to make more sense? #submitState #stateInput?
+$("#submitCity").click(searchRegion)
+// searchCountry() grabs value of search. Needs a use!
+function searchRegion() {
+    // value from search input bar
+    $userRegion = $("#cityInput").val();
+    console.log($userRegion);
+    // clear input bar after capture
+    $("#cityInput").val("");
+}
 
-/* NovelCOV Call - Work in Progress - Three Data Cards?*/
-
-// NovelCOV-19 API Call //
+/* NovelCOV-19 API Calls */
+// Global Stats
 var settings = {
-    "url": "https://corona.lmao.ninja/v2/all",
+    "url": "https://disease.sh/v2/all",
     "method": "GET",
     "timeout": 0,
 };
 
 $.ajax(settings).done(function (response) {
     console.log(response);
+    // assign values to vars
+    let globalActive = response.active;
+    let globalRecovered = response.recovered;
+    let globalDeaths = response.deaths;
+    let globalToday = response.todayCases;
+    // for small text timestamp (going to convert from UNIX)
+    let globalUpdate = response.updated;
+    // first convert moment Obj w/ .unix() method
+    globalUpdate = moment.unix(globalUpdate / 1000);
+    // extract human readable format
+    globalUpdate = globalUpdate.format("dddd, MMM Do");
+    // append to Data Cards, with hr above p's
+    $("#global-cases").append("<p class='cards-p'>Active:</p><p class='cards-p'>" + globalActive + "</p>")
+    $("#global-recovered").append("<p class='cards-p'>Recovered:</p><p class='cards-p'>" + globalRecovered + "</p>")
+    $("#global-deaths").append("<p class='cards-p'>Deceased:</p><p class='cards-p'>" + globalDeaths + "</p>")
+    $("#global-new").append("<p class='cards-p'>New Today:</p><p class='cards-p'>" + globalToday + "</p>")
+    $("#global-time").text("Current as of " + globalUpdate);
 });
 
+// NovelCOV-19 Again, this time for State Stats
+function stateStatsCall() {
+    // plug userState into call
+    let stateStatsURL = "https://disease.sh/v2/states/" + userState;
+    var settings = {
+        "url": stateStatsURL,
+        "method": "GET",
+        "timeout": 0,
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        // assign values to vars
+        let stateName = response.state;
+        let stateActive = response.active;
+        let stateDeaths = response.deaths;
+        let stateToday = response.todayCases;
+        // for small text timestamp, same conversion as above
+        let localUpdate = response.updated;
+        localUpdate = moment.unix(localUpdate / 1000);
+        localUpdate = localUpdate.format("dddd, MMM Do");
+        // clear section in case this is not the first stateStatsCall()
+        $(".wipe").empty();
+        // .empty clears card-title, so refill it
+        $("#state-stats").text("Local Statistics")
+        // append to Data Cards, with hr above p's
+        $("#state-name").append("<p class='cards-p wipe'>State:</p><p class='cards-p wipe'>" + stateName + "</p>")
+        $("#state-cases").append("<p class='cards-p wipe'>Active:</p><p class='cards-p wipe'>" + stateActive + "</p>")
+        $("#state-deaths").append("<p class='cards-p wipe'>Deceased:</p><p class='cards-p wipe'>" + stateDeaths + "</p>")
+        $("#state-new").append("<p class='cards-p wipe'>New Today:</p><p class='cards-p wipe'>" + stateToday + "</p>")
+        $("#state-time").text("Current as of " + localUpdate);
+    });
+}
 
 /* NEWS SECTION */
-
-// Global var used in ajax calls and Select State
-let userState = "";
 
 // ajaxResource() gets userState for NewsAPI and Testing API below
 function ajaxState() {
@@ -74,7 +137,7 @@ function ajaxState() {
 // ajaxNews() fills News Section
 function ajaxNews() {
     // NewsAPI.org
-    let newsURL = "http://newsapi.org/v2/top-headlines?country=us&q=coronavirus&sortBy=popularity&apiKey=5f16e289ba95422780d31a86b588ae1d";
+    let newsURL = "https://newsapi.org/v2/top-headlines?country=us&q=coronavirus&sortBy=popularity&apiKey=5f16e289ba95422780d31a86b588ae1d";
     $.ajax({
         url: newsURL,
         method: "GET"
@@ -85,14 +148,14 @@ function ajaxNews() {
         let newsTitles = [];
         // array to hold urls
         let newsLinks = [];
-        // loop through response, grab top 5 article titles & their urls
+        // loop through response, grab article titles & urls
         for (i = 0; i < response.articles.length; i++) {
             newsTitles[i] = response.articles[i].title;
             newsLinks[i] = response.articles[i].url;
         }
         // Shuffling the two arrays: Fisher-Yates Algorithm
-        // Thanks to a previous teacher at Sac City, Mathew Phillips,
-        // for answering my email about this subject in old notes!
+        // Thanks to a previous teacher at Sac City, Matthew Phillips,
+        // for answering my email about this subject in my old notes.
         // loop from end of array to index 1, not 0
         for (i = newsTitles.length - 1; i > 0; i--) {
             // generate random number from 0 to last index, first pass is 0 to 4,
@@ -115,7 +178,7 @@ function ajaxNews() {
         // arrays are now shuffled in the same manner,
         // display in html, set link attributes
         for (i = 0; i < newsTitles.length; i++) {
-            $("#news-list").append("<li><a href=" + newsLinks[i] + ">" + newsTitles[i] + "</a></li>");
+            $("#news-list").append("<li><a href=" + newsLinks[i] + " target='_blank'>" + newsTitles[i] + "</a></li>");
         }
     });
 }
@@ -174,6 +237,7 @@ $(".dropdown-item").click(function () {
     userState = $(this).attr("value");
     console.log(userState);
     ajaxTesting();
+    stateStatsCall();
 });
 
 // News Section Show More button listener toggles .hide, 

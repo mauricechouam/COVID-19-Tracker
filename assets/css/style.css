@@ -53,26 +53,40 @@ body {
     color: white;
 }
 
-/* Davids CSS */ 
+/* David's CSS */ 
+
+/* Stats Cards, dynamic fill - New  */ 
+.global, .state {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* For dynamically created stats */ 
+.cards-p{
+    font-weight: 500;
+    text-align: center;
+    margin-top: -8px;
+}
 
 /* News & Testing Section */ 
-#news-list li, #test-list li {
+#news-list li, #test-list li, #more-list li {
     list-style: none;
     padding-bottom: 10px;
     color: white;
 }
 
-#news-list a {
+#news-list a, #more-list a {
     color: #ffffff;
     font-weight: 500;
 }
 
-/* News & Testing Titles, Show More Buttons */ 
-#news, #local-testing, #more-tests, #more-news {
+/* News & Testing Titles, Show More Buttons, Additional Resources*/ 
+#news, #local-testing, #more-tests, 
+#more-news, #more-resources {
     margin-left: 40px;
 }
 
-#news, #local-testing {
+#news, #local-testing, #more-resources {
     font-weight: 500;
 }
 

@@ -42,8 +42,9 @@
         </div>
     </nav>
 
-    <!-- Map container -->
+    <!-- Main Container -->
     <div class="row">&nbsp;</div>
+
     <div class="container">
         <div class="card-body">
             <form>
@@ -63,16 +64,39 @@
 
             <div class="row">&nbsp;</div>
 
-            <!-- News and Local Testing -->
+            <!-- Global Stats -->
+            <div class="card bg-custom-1 global">
+                <div class="card-body bg-custom-1">
+                    <!-- Flex! -->
+                    <h5 class="card-title card-text d-flex justify-content-center" id="global-stats">Global Statistics
+                    </h5>
+                    <hr>
+                    <!-- dynamically filled <p> - class .cards-p for CSS -->
+                    <div class="row">
+                        <div class="col card-text" id="global-cases"></div>
+                        <div class="col card-text" id="global-recovered"></div>
+                        <div class="col card-text" id="global-deaths"></div>
+                        <div class="col card-text" id="global-new"></div>
+                    </div>
+                    <p class="card-text d-flex justify-content-center"><small class="text-muted"
+                            id="global-time"></small></p>
+                </div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+
+            <!-- News -->
             <div class="card bg-custom-1">
                 <div class="card-body">
-                    <div class="card-title card-text" id="news">National Covid-19 Headlines</div>
-                    <hr style="color: white;">
+                    <div>
+                        <h5 class="card-title card-text" id="news">National Covid-19 Headlines</h5>
+                    </div>
+                    <hr>
                     <!-- .hide is the toggle class, important! -->
                     <ul class="hide" id="news-list">
                         <!-- dynamically filled -->
                     </ul>
-                    <!-- this button hides/reveals more info by toggling .hide in js -->
+                    <!-- this button hides/reveals more info by toggling .hide in app.js -->
                     <button class="btn btn-outline-success shadow-none" id="more-news" type="button">
                         Show More</button>
                 </div>
@@ -80,11 +104,35 @@
 
             <div class="row">&nbsp;</div>
 
+            <!-- State Stats -->
+            <div class="card bg-custom-1 state">
+                <div class="card-body bg-custom-1">
+                    <!-- Flex! -->
+                    <h5 class="card-title card-text d-flex justify-content-center" id="state-stats">Local Statistics
+                    </h5>
+                    <hr>
+                    <!-- .cards-p created dynamically in app.js-->
+                    <div class="row state">
+                        <div class="col card-text" id="state-name"></div>
+                        <div class="col card-text" id="state-cases"></div>
+                        <div class="col card-text" id="state-deaths"></div>
+                        <div class="col card-text" id="state-new"></div>
+                    </div>
+                    <p class="card-text d-flex justify-content-center"><small class="text-muted"
+                            id="state-time"></small></p>
+                </div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+
+            <!-- Local Testing & -->
             <div class="card bg-custom-1">
                 <div class="card-body">
-                    <div class="card-title card-text" id="local-testing">Testing in Your State
-                        <!-- span filled dynamically with user's state -->
-                        <span id="your-state"></span>
+                    <div>
+                        <h5 class="card-title card-text" id="local-testing">
+                            Testing in Your State
+                            <!-- span filled dynamically with user's state -->
+                            <span id="your-state"></span></h5>
                     </div>
                     <hr>
                     <!-- .hide toggle class -->
@@ -99,7 +147,7 @@
 
             <div class="row">&nbsp;</div>
 
-            <!-- Select State if IP-API.org can't
+            <!-- Select State if ipapi.co can't
                     detect where you are (VPN or mobile data network) -->
             <div id="user-search">
                 <!-- Flex! -->
@@ -112,8 +160,7 @@
                         Select Your State
                     </button>
                     <div class="dropdown-menu pre-scrollable state-hide" aria-labelledby="dropdownMenuButton">
-                        <!-- Some two word states are separated by an underscore,
-                                others are a hyphen. Hopefully they leave it as is for now. -->
+                        <!-- Some two word states are separated by an underscore, others are a hyphen. -->
                         <a class="dropdown-item" value="no">Select State</a>
                         <a class="dropdown-item" value="alabama">Alabama</a>
                         <a class="dropdown-item" value="alaska">Alaska</a>
@@ -171,23 +218,63 @@
 
             <div class="row">&nbsp;</div>
 
+            <div class="card bg-custom-1">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title card-text" id="more-resources">Additional Resources</h5>
+                    </div>
+                    <hr>
+                    </p>
+                    <ul id="more-list">
+                        <p class="card-text">These are difficult times for everyone. Please do not suffer
+                            alone.</p>
+                        <li><a href="https://www.benefits.gov/help/faq/Coronavirus-resources" target="_blank">
+                                Financial Support</a></li>
+                        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/managing-stress-anxiety.html"
+                                target="_blank">
+                                Coping with Anxiety</a></li>
+                        <li><a href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank">
+                                Find Local Food Banks</a></li>
+                        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/care-for-someone.html"
+                                target="_blank">
+                                Caring for Loved ones</a></li>
+                        <li><a href="https://swingeducation.com/resources/20-online-learning-resources-to-help-you-get-through-coronavirus-school-closures/"
+                                target="_blank">
+                                Home Learning for All Ages</a></li>
+                        <li><a href="#">Resources for First Responders</a></li>
+                        <li><a href="https://www.samhsa.gov/dtac/disaster-responders" target="_blank">
+                                Resources for Mental Health Providers</a></li>
+                        <li><a href="https://www.instyle.com/lifestyle/domestic-violence-coronavirus-how-to-help"
+                                target="_blank">
+                                Resources for Domestic Violence Survivors</a></li>
+                        <li><a href="https://www.them.us/story/online-resources-lgbtq-coronavirus" target="_blank">
+                                Resources for LGBTQ+ Community</a></li>
+                        <li><a href="https://www.blogs.va.gov/VAntage/72856/veterans-multiple-resources-covid-19-information/"
+                                target="_blank">
+                                Resources for Veterans</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Page Break -->
+            <br>
+
+            <!-- Footer -->
+            <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
+                    Made with <img style="margin-top: -2px;" width="20" height="20"
+                        src="https://img.icons8.com/dusk/64/000000/like.png" /> by <a
+                        style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb"
+                        target="_blank">Chase Johnson,</a><a
+                        style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+                        href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a
+                        style="font-size: 15px; color: white; letter-spacing: 0.1em;"
+                        href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
+            </p>
         </div>
-
-        <!-- Page Break -->
-        <br>
-
-        <!-- Footer -->
-        <p class="m-0 align-self-center text-center"><a style="color: white; letter-spacing: 0.1em;">
-                Made with <img style="margin-top: -2px;" width="20" height="20"
-                    src="https://img.icons8.com/dusk/64/000000/like.png" /> by <a
-                    style="font-size: 15px; color: white; letter-spacing: 0.1em;" href="https://github.com/chaseyb"
-                    target="_blank">Chase Johnson,</a><a style="font-size: 15px; color: white; letter-spacing: 0.1em;"
-                    href="https://github.com/gloriousLoaf" target="_blank"> David Metcalf,</a><a
-                    style="font-size: 15px; color: white; letter-spacing: 0.1em;"
-                    href="https://github.com/mauricechouam" target="_blank"> Maurice Chouamou </a>
-        </p>
     </div>
 
+    <!-- Moment.js for Stats Cards -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- main jQuery library -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -210,31 +297,3 @@
 </body>
 
 </html>
-
-<!-- Data Cards 
-    <div class="card-deck">
-        <div class="card bg-custom-1">
-            <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-    
-    <div class="card bg-custom-1">
-        <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-   
-    <div class="card bg-custom-1">
-        <div class="card-body bg-custom-1">
-            <h5 class="card-title card-text">Example Data</h5>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-       </div>
-      </div>
-    -->
