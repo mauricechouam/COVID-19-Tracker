@@ -63,13 +63,10 @@ let userState = "";
 
 // ajaxResource() gets userState for NewsAPI and Testing API below
 function ajaxState() {
-    // first, IP-API.com to get
-    let state = "http://ip-api.com/json/?fields=regionName";
-    $.getJSON(state).done(function (location) {
-        // vars to get just the city from ip-api JSON
-        state = location.regionName;
-        // need a var to hold value of state, in lower case
-        userState = state.toLowerCase();
+    // first, ipapi.co to get state (region) from user IP address
+    $.get('https://ipapi.co/8.8.8.8/region/', function (data) {
+        // need a var to hold value of data, in lower case
+        userState = data.toLowerCase();
         console.log(userState);
     });
 }
