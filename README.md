@@ -50,7 +50,7 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 
 ## Roles ##
 
-* Chase - Map and Global Stats API, Frontend & CSS styling.
+* Chase - Map & Global Stats API, Frontend & CSS styling.
 * David - News, Testing & additional Stats API, plus some CSS.
 * Maurice - Map API, Frontend & CSS styling. 
 
