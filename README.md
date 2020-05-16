@@ -10,8 +10,11 @@ HELPFUL LOCAL RESOURCES
 - [APIs](#APIs)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
+- [Roles](#Roles)
+- [Successes](#Successes)
+- [Challenges](#Challenges)
+- [Future-Development](#Future-Development)
 - [Sources](#Resources)
-
 
 ## Team Members ##
 
@@ -34,12 +37,6 @@ SO THAT I can make safe plans for shopping, working and living in my community.
 - Novel COVID API : Multi-source aggregated Covid-19 stats.
 - NewsAPI.org : Search worldwide news with code.
 
-## Libraries
-- Moment.JS :  Parse, validate, manipulate, and display dates and times
-- Popper.js :  Popover positioning engine, in conjunction with Bootstrap.js
-- JQueryUI.js : Interactions and animations, in conjunction with jQuery.js
-
-
 ## Wireframe ##
 
 Local search button pulls up info to populate map. Also fills info into Recent Cases, Hot Spots (maybe other categories) which animate down to reveal info when tapped/clicked. Local resources offers info on where to find help, food, distractions etc.
@@ -51,7 +48,35 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 * JS / jQuery to add interactivity and functionality.
 * APIs to tackle; working out proper AJAX calls to add further features to our scripts.
 
+## Roles ##
+
+* Chase - Map & Global Stats API, Frontend & CSS styling.
+* David - News, Testing & additional Stats API, plus some CSS.
+* Maurice - Map API, Frontend & CSS styling. 
+
+## Successes ##
+
+* Fully functional application.
+* Utilizes miltiple APIs to work together in unison.
+* Tracks latest updates for COV-19 Global and Local Statistics. 
+* Provides National Headlines with working links.
+* Provides local testing info based on user location.
+* Provides additional resources for those who need help.
+
+## Challenges ##
+
+* Getting Map API to display cluters on Map with country data. 
+* Coordinating the various API calls to populate on load without errors.
+* Extracting numerous data points from AJAX to display in the correct elements in HTML.
+
+## Future-Development ##
+
+* Update Map API to display more information.
+* Add diagrams to sync with statistics.
+* Developement desktop application.
+
 ## Sources ##
+
 - Moment.JS :  Parse, validate, manipulate, and display dates and times
 - Popper.js :  Popover positioning engine, in conjunction with Bootstrap.js
 - JQueryUI.js : Interactions and animations, in conjunction with jQuery.js
