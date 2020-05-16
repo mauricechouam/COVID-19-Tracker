@@ -13,7 +13,7 @@ HELPFUL LOCAL RESOURCES
 - [Tasks](#Tasks)
 
 
-## Team Members 
+## Team Members ##
 
 * Chase Johnson (https://github.com/chaseyb) 
 
@@ -21,7 +21,7 @@ HELPFUL LOCAL RESOURCES
 
 * Maurice Chouamou (https://github.com/mauricechouam)
 
-## User Story 
+## User Story ##
 
 AS A concerned citizen of the world, looking out for myself and my loved ones.
 I WANT to get up to date information on the spread of COVID-19 in my area.
