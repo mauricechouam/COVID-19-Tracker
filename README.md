@@ -50,18 +50,18 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 
 ## Roles ##
 
-Chase - Map and Global Stats API, Frontend & CSS styling 
-David - News, Testing & additional Stats API, plus some CSS.
-Maurice - Map API, Frontend & CSS styling. 
+* Chase - Map and Global Stats API, Frontend & CSS styling.
+* David - News, Testing & additional Stats API, plus some CSS.
+* Maurice - Map API, Frontend & CSS styling. 
 
 ## Successes ##
 
-* Fully functional application
-* Utilizes miltiple APIs to work together in unison 
-* Tracks latest updates for COV-19 Global and Local Statistics 
-* Provides National Headlines with working links 
-* Provides local testing info based on user location 
-* Provides additional resources for those who need help
+* Fully functional application.
+* Utilizes miltiple APIs to work together in unison.
+* Tracks latest updates for COV-19 Global and Local Statistics. 
+* Provides National Headlines with working links.
+* Provides local testing info based on user location.
+* Provides additional resources for those who need help.
 
 ## Challenges ##
 
