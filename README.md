@@ -51,7 +51,7 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 * JS / jQuery to add interactivity and functionality.
 * APIs to tackle; working out proper AJAX calls to add further features to our scripts.
 
-## Resources##
+## Resources ##
 -  Visualization Application using JavaScript & Mapbox: https://www.youtube.com/watchv=lX0vHaqtk6M&list=PLFCkVj8OgURfTfCqiCcnqnUlUVfeUmzNJ&index=2&t=1268s
 
 
