@@ -34,10 +34,6 @@ SO THAT I can make safe plans for shopping, working and living in my community.
 - Novel COVID API : Multi-source aggregated Covid-19 stats.
 - NewsAPI.org : Search worldwide news with code.
 
-## Libraries
-- Moment.JS :  Parse, validate, manipulate, and display dates and times
-- Popper.js :  Popover positioning engine, in conjunction with Bootstrap.js
-- JQueryUI.js : Interactions and animations, in conjunction with jQuery.js
 
 
 ## Wireframe ##
