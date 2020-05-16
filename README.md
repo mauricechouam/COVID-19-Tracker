@@ -30,7 +30,7 @@ SO THAT I can make safe plans for shopping, working and living in my community.
 
 ## APIs
 
-- IP Geolocation: https://ip-api.com/ Used to get the city location of the user.
+- IP Geolocation: https://ipapi.co/ Used to get the city location of the user.
 - COVID-19 Statistics: https://rapidapi.com/axisbits-axisbits-default/api/covid-19-statistics/ & https://covid-19-apis.postman.com/ Used to get local coronavirus related statistics.
 - Novel COVID API : Multi-source aggregated Covid-19 stats.
 - NewsAPI.org : Search worldwide news with code.
