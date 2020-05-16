@@ -8,10 +8,10 @@ $(document).ready(function () {
     // setTimeouts to give ajax calls time to respond
     setTimeout(function () {
         stateStatsCall();
-    }, 300)
+    }, 400)
     setTimeout(function () {
         ajaxNews();
-    }, 300)
+    }, 500)
     setTimeout(function () {
         ajaxTesting();
     }, 750)
