@@ -6,9 +6,9 @@ HELPFUL LOCAL RESOURCES
 
 ## table of Contents
 - [Team Members](#Team Members)
-- [User Story](# User Story)
-- [ APIs](# APIs)
-- [ Libraries](#Libraries)
+- [User Story](#User Story)
+- [APIs](#APIs)
+- [Libraries](#Libraries)
 
 
 ## Team Members 
