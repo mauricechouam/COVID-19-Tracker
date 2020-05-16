@@ -13,7 +13,7 @@ HELPFUL LOCAL RESOURCES
 - [Roles](#Roles)
 - [Successes](#Successes)
 - [Challenges](#Challenges)
-- [Future Development](#Future Development)
+- [Future-Development](#Future-Development)
 - [Sources](#Resources)
 
 ## Team Members ##
@@ -69,10 +69,10 @@ Maurice - Map API, Frontend & CSS styling.
 * Coordinating the various API calls to populate on load without errors.
 * Extracting numerous data points from AJAX to display in the correct elements in HTML.
 
-## Future Development ##
+## Future-Development ##
 
 * Update Map API to display more information.
-* Add graphs to sync with statistics.
+* Add diagrams to sync with statistics.
 * Developement desktop application.
 
 ## Sources ##
