@@ -11,9 +11,9 @@ HELPFUL LOCAL RESOURCES
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
 - [Roles](#Roles)
--[Successes](#Successes)
--[Challenges](#Challenges)
--[Future Development](#Future Development)
+- [Successes](#Successes)
+- [Challenges](#Challenges)
+- [Future Development](#Future Development)
 - [Sources](#Resources)
 
 ## Team Members ##
