@@ -6,12 +6,12 @@ HELPFUL LOCAL RESOURCES
 
 ## table of Contents
 - [Team Members](#Team Members)
-- [User Story](#User Story)
-- [ APIs](#APIs)
+- [User Story](# User Story)
+- [ APIs](# APIs)
 - [ Libraries](#Libraries)
 
 
-# Team Members 
+## Team Members 
 
 * Chase Johnson (https://github.com/chaseyb) 
 
