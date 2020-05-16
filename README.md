@@ -10,7 +10,7 @@ HELPFUL LOCAL RESOURCES
 - [APIs](#APIs)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
-- [resources](#Resources)
+- [Sources](#Resources)
 
 
 ## Team Members ##
