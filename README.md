@@ -10,6 +10,7 @@ HELPFUL LOCAL RESOURCES
 - [Libraries](#Libraries)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
+- [resources](#Resources)
 
 
 ## Team Members ##
@@ -49,3 +50,9 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 * Design CSS utilizing Bootstrap & flex classes to make our app mobile-first, visually appealing and ready to work with JS / jQuery.
 * JS / jQuery to add interactivity and functionality.
 * APIs to tackle; working out proper AJAX calls to add further features to our scripts.
+
+## Resources##
+-  Visualization Application using JavaScript & Mapbox: https://www.youtube.com/watchv=lX0vHaqtk6M&list=PLFCkVj8OgURfTfCqiCcnqnUlUVfeUmzNJ&index=2&t=1268s
+
+
+
