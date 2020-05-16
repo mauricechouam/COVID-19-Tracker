@@ -2,41 +2,132 @@
 * {
     max-width: 99vw;
 }
-
-/* Jumbotron */ 
-/* shape it up */ 
-.jumbotron {
-    margin: -20px 0 -10px 0;
+*:focus {
+    outline: none;
 }
 
-/* text image */ 
-.jumbotron #cov-com-text {
-    max-height: 30%;
-    max-width: 30%;
-    margin: -20px 0;
+/* Body Background color */
+body {
+    background-color: #1F2328;
 }
 
-.jumbotron #cov-com-icon {
-    max-height: 15%;
-    max-width: 15%;
+/* NavBar Styling */
+.navbar .navbar-brand{
+    color: white;
 }
 
-/* Search Button area */ 
-#search-card {
-    border-style: none;
+.navbar {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+    min-height: 80px;
+    border-bottom: solid 2px green;
 }
 
-.search-button {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 50%;
-    border-radius: 20px;
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
 }
 
-/* Cards */ 
-/* trim them up */ 
-.all-cards {
-    display: block;
+/* Map Styling */
+#map {
+    height: 600px;
+    /* width: auto; */
+    border: .5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+    color: gray;
+}
+
+#corona-world-details {
+    background-position: center;
+  }
+
+/* Card Styling */
+hr {
+    border-bottom: solid 2px green;
+}
+
+.card {
+    background-attachment: #1F1B24;
+    border: .5px;
+    padding: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+}
+
+/* Card background color*/
+.bg-custom-1 {
+    background-color:#24292E;
+}
+
+/* Card Text Color */
+.card-text {
+    color: white;
+}
+
+.card-text-1 {
+    color: #5BC0DE;
+}
+
+.card-text-2 {
+    color: #5CB85C;
+}
+
+.card-text-3 {
+    color: #D9534F;
+}
+
+.card-text-4 {
+    color: #F0AD4E;
+}
+
+/* .hidden hides a MapBox component that
+    cannot be removed without breaking map */ 
+.hidden {
+    display: none;
+}
+
+/* Stats Cards, dynamic fill - New  */ 
+.squeeze {
+    max-width: 90%;
     margin: 0 auto;
-    max-width: 80%;
+}
+
+/* For dynamically created stats */ 
+.cards-p{
+    font-weight: 500;
+    text-align: center;
+    margin-top: -8px;
+}
+
+/* News & Testing Section */ 
+#news-list li, #test-list li, #more-list li {
+    list-style: none;
+    padding-bottom: 10px;
+    color: white;
+}
+
+#news-list a, #more-list a {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* News & Testing Titles, Show More Buttons, Additional Resources*/ 
+#news, #local-testing, #more-tests, 
+#more-news, #more-resources {
+    margin-left: 40px;
+}
+
+#news, #local-testing, #more-resources {
+    font-weight: 500;
+}
+
+/* Dislaying userState, which is toLowerCase() by default */ 
+#your-state {
+    text-transform: capitalize;
+}
+
+/* .hide & button text toggled dynamically in js */ 
+.hide {
+    height: 265px;
+    overflow: hidden;
 }
