@@ -7,6 +7,7 @@ HELPFUL LOCAL RESOURCES
 ## Table of Contents ##
 - [Team_Members](#Team_Members)
 - [User_Story](#User_Story)
+- [APIs](#APIs)
 - [Libraries](#Libraries)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
