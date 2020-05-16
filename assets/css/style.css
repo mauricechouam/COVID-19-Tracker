@@ -2,6 +2,9 @@
 * {
     max-width: 99vw;
 }
+*:focus {
+    outline: none;
+}
 
 /* Body Background color */ 
 body {

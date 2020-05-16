@@ -332,7 +332,7 @@ function renderMap() {
                 'circle-color': [
                     'step',
                     ['get', 'point_count'],
-                    '#51bbd6',
+                    '#5cb85c',
                     100,
                     '#f1f075',
                     750,
@@ -360,7 +360,7 @@ function renderMap() {
             source: 'places',
             filter: ['!', ['has', 'point_count']],
             paint: {
-                'circle-color': '#11b4da',
+                'circle-color': '#5cb85c',
                 'circle-radius': 4,
                 'circle-stroke-width': 1,
                 'circle-stroke-color': '#fff'
