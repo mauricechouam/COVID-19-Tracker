@@ -5,9 +5,8 @@ TRENDING GLOBAL NEWS.
 HELPFUL LOCAL RESOURCES
 
 ## table of Contents
-- [Team Members](#Team Members)
-- [User Story](#User Story)
-- [APIs](#APIs)
+- [Team_Members](#Team Members)
+- [User_Story](#User Story)
 - [Libraries](#Libraries)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
