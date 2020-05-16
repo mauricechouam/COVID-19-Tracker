@@ -4,7 +4,7 @@ QUICK, LOCATION BASED UPDATES.
 TRENDING GLOBAL NEWS.
 HELPFUL LOCAL RESOURCES
 
-# tTable of Contents #
+## Table of Contents ##
 - [Team_Members](#Team_Members)
 - [User_Story](#User_Story)
 - [Libraries](#Libraries)
