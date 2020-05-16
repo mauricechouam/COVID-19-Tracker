@@ -9,6 +9,8 @@ HELPFUL LOCAL RESOURCES
 - [User Story](#User Story)
 - [APIs](#APIs)
 - [Libraries](#Libraries)
+- [Wireframe](#Wireframe)
+- [Tasks](#Tasks)
 
 
 ## Team Members 
