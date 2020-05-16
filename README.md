@@ -1,4 +1,4 @@
-# COVID-COMMU #
+# COVID-19 Tracker
 
 QUICK, LOCATION BASED UPDATES.
 TRENDING GLOBAL NEWS.
@@ -8,7 +8,6 @@ HELPFUL LOCAL RESOURCES
 - [Team_Members](#Team_Members)
 - [User_Story](#User_Story)
 - [APIs](#APIs)
-- [Libraries](#Libraries)
 - [Wireframe](#Wireframe)
 - [Tasks](#Tasks)
 - [resources](#Resources)
@@ -52,8 +51,11 @@ Local search button pulls up info to populate map. Also fills info into Recent C
 * JS / jQuery to add interactivity and functionality.
 * APIs to tackle; working out proper AJAX calls to add further features to our scripts.
 
-## Resources ##
--  Visualization Application using JavaScript & Mapbox: https://www.youtube.com/watchv=lX0vHaqtk6M&list=PLFCkVj8OgURfTfCqiCcnqnUlUVfeUmzNJ&index=2&t=1268s
+## Sources ##
+- Moment.JS :  Parse, validate, manipulate, and display dates and times
+- Popper.js :  Popover positioning engine, in conjunction with Bootstrap.js
+- JQueryUI.js : Interactions and animations, in conjunction with jQuery.js
+- The Nerdy Dev : You Tuber Whose Video helped us create our MapBox panel
 
 
 
