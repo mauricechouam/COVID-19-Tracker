@@ -561,7 +561,7 @@ function stateStatsCall() {
 // ajaxResource() gets userState for NewsAPI and Testing API below
 function ajaxState() {
     // first, ipapi.co to get state (region) from user IP address
-    $.get('https://ipapi.co/8.8.8.8/region/', function (data) {
+    $.get('https://ipapi.co/region/', function (data) {
         // need a var to hold value of data, in lower case
         userState = data.toLowerCase();
         console.log(userState);
