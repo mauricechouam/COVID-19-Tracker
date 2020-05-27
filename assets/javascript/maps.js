@@ -481,17 +481,7 @@ function doEventBindings() {
 // Global var used in ajax calls and Select State Dropdown
 let userState = "";
 
-// NEW Listener to capture search bar input
-// Should we change ids in html to make more sense? #submitState #stateInput?
-$("#submitCity").click(searchRegion)
-// searchCountry() grabs value of search. Needs a use!
-function searchRegion() {
-    // value from search input bar
-    $userRegion = $("#cityInput").val();
-    console.log($userRegion);
-    // clear input bar after capture
-    $("#cityInput").val("");
-}
+
 
 /* NovelCOV-19 API Calls */
 // Global Stats
