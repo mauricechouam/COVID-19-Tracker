@@ -1,3 +1,7 @@
+
+/* The first half of this file was written
+    by Chase & Maurice, the bottom half was me.*/
+
 // On page load, call functions
 $(document).ready(function () {
     // get MapBox.com
@@ -18,7 +22,7 @@ $(document).ready(function () {
 });
 
 
-/* BEGIN MAPBOX */
+/* BEGIN MAPBOX */      // MapBox implementation by Chase & Maurice
 
 // the base url end point 
 const baseUrlEndPoint = `https://coronavirus-tracker-api.herokuapp.com/v2/locations`;
@@ -476,12 +480,10 @@ function doEventBindings() {
 }
 
 
-/* BEGIN NEWS, TESTING & STATS CARDS */
+/* BEGIN NEWS, TESTING & STATS CARDS */     // The rest was all written by me.
 
 // Global var used in ajax calls and Select State Dropdown
 let userState = "";
-
-
 
 /* NovelCOV-19 API Calls */
 // Global Stats
@@ -560,8 +562,9 @@ function ajaxState() {
 
 // ajaxNews() fills News Section
 function ajaxNews() {
-    // NewsAPI.org
-    let newsURL = "https://newsapi.org/v2/top-headlines?country=us&q=coronavirus&sortBy=popularity&apiKey=5f16e289ba95422780d31a86b588ae1d";
+    // developer.nytimes.com Article Search API
+    let newsURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus&` +
+        `api-key=06RnZqeJw8n5FJNG9657OXR22GDoKKwm`;
     $.ajax({
         url: newsURL,
         method: "GET"
@@ -573,9 +576,9 @@ function ajaxNews() {
         // array to hold urls
         let newsLinks = [];
         // loop through response, grab article titles & urls
-        for (i = 0; i < response.articles.length; i++) {
-            newsTitles[i] = response.articles[i].title;
-            newsLinks[i] = response.articles[i].url;
+        for (i = 0; i < response.response.docs.length; i++) {
+            newsTitles[i] = response.response.docs[i].headline.main;
+            newsLinks[i] = response.response.docs[i].web_url;
         }
         // Shuffling the two arrays: Fisher-Yates Algorithm
         // Thanks to a previous teacher at Sac City, Matthew Phillips,
@@ -688,3 +691,4 @@ $("#more-tests").click(function () {
         $(this).text("Show More");
     }
 });
+
